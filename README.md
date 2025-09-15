@@ -1,6 +1,5 @@
 <p align="center">
-  <img src="BinitDeb7\assets\68747470733a2f2f7777772e6469676974616c736f6c7574696f6e73657276696365732e636f6d2f696d672f73657276696365732f77656273697465312e676966.gif"
-   alt="GIF" />
+  <img src="https://raw.githubusercontent.com/BinitDeb7/BinitDeb7/main/assets/banner.gif" alt="GIF Banner" />
 </p>
 
 
