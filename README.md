@@ -7,7 +7,7 @@
 
 
 # 💫 About Me:
-🔭 I’m currently working on my final year project<br><br>🌱 I’m currently learning DSA in Python<br><br>💬 Ask me about Android Development, Web Development, Python Development, Data Analytics and Management<br><br>📫 How to reach me binitdeb5396@gmail.com <br><br>⚡ Fun fact I am an Athlete and Gamer too
+🔭 I’m currently working on my final year project<br><br>🌱 I’m currently learning DSA in Python<br><br>💬 Ask me about  Web Development, Python Development, Data Analytics and Management<br><br>📫 How to reach me binitdeb5396@gmail.com <br><br>⚡ Fun fact I am an Athlete and Gamer too
 
 
 ## 🌐 Socials:
