@@ -3,7 +3,11 @@
 </p>
 
 <h1 align="center">Hi 👋, I'm Binit Deb</h1>
-<h3 align="center">A passionate Developer from India</h3>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/BinitDeb7/BinitDeb7/main/your_cool_intro.gif" alt="GIF Banner" />
+</p>
+
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=binitdeb7&label=Profile%20views&color=0e75b6&style=flat" alt="binitdeb7" /> </p>
 
