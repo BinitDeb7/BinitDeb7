@@ -148,7 +148,8 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: Platane/snk@v3
+      - name: generate-snake-game-from-github-contribution-grid
+        uses: Platane/snk@v3.5.0
         with:
           github_user_name: BinitDeb7
           outputs: |
