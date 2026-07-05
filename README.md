@@ -112,11 +112,45 @@ contact: binitdeb5396@gmail.com 📫
 
 <br/>
 
-## 🏆 Trophies
+## 🏆 Achievements & Metrics
 
 <div align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=BinitDeb7&theme=algolia&no-frame=true&row=1&column=7" alt="binitdeb7" />
+<img src="https://raw.githubusercontent.com/BinitDeb7/BinitDeb7/main/metrics.svg" alt="metrics" width="95%"/>
 </div>
+
+> This replaces the old trophy widget. Instead of loading an image live from someone else's shared Vercel deployment (which frequently 402s when it's over its free quota), [`lowlighter/metrics`](https://github.com/lowlighter/metrics) runs as **your own** GitHub Action and commits `metrics.svg` straight into this repo. Nothing renders from a third-party server at page-load time, so it can't go down the way the trophy widget did.
+
+<details>
+<summary>⚙️ Metrics workflow (click to expand)</summary>
+
+```yaml
+name: metrics
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          plugin_achievements: yes
+          plugin_achievements_threshold: C
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_analysis_timeout_repositories: 15
+```
+
+Save this as `.github/workflows/metrics.yml`, then run it once manually from the **Actions** tab. It commits `metrics.svg` to your default branch — no separate `output` branch needed.
+
+</details>
 
 <br/>
 
@@ -162,6 +196,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+</details>
+
+<details>
+<summary>🩹 If the snake still isn't showing, check these (click to expand)</summary>
+
+1. **Workflow permissions** — this is the #1 cause. Go to your repo's **Settings → Actions → General → Workflow permissions**, and make sure **"Read and write permissions"** is selected, then Save. By default GitHub gives Actions read-only access, so the push to the `output` branch silently fails with a 403.
+2. **Actually run it once** — committing the YAML file alone does not trigger it. Go to the **Actions** tab → select the workflow → click **Run workflow** (this uses the `workflow_dispatch` trigger).
+3. **Check the build log** — click into the run; if the second step (`ghaction-github-pages`) failed, it'll say why (usually the permissions issue above).
+4. **Confirm the branch exists** — after a successful run, go to **Code** → branch dropdown → you should now see an `output` branch containing the `.svg` files.
+5. **Double check the URL** — it must be `raw.githubusercontent.com/<username>/<username>/output/github-contribution-grid-snake.svg`, matching your actual username exactly.
 
 </details>
 
